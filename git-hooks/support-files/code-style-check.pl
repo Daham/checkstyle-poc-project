@@ -7,9 +7,9 @@ $CONFIG_CHECK_FILE = "checkstyle.checkfile";
 $CONFIG_JAR = "checkstyle.jar";
 $CONFIG_JAVA = "java.command";
 
-$check_file = git config --get $CONFIG_CHECK_FILE;
-$checkstyle_jar = git config --get $CONFIG_JAR;
-$java_command = git config --get $CONFIG_JAVA;
+$check_file = `git config --get $CONFIG_CHECK_FILE`;
+$checkstyle_jar = `git config --get $CONFIG_JAR`;
+$java_command = `git config --get $CONFIG_JAVA`;
 
 if (!$check_file || !$checkstyle_jar)
 {
@@ -48,3 +48,11 @@ if ($#java_files >= 0)
 }
 
 print STDERR "Commit aborted.\n";
+exit -1;
+
+sub run_and_log_system
+{
+   ($cmd) = @_;
+
+   system $cmd;
+}
