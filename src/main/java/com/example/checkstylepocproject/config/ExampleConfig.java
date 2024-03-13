@@ -6,7 +6,9 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class ExampleConfig {
   @Bean
-  public Object exampleBean(){
+  public Object exampleBean()
+
+  {
     return new Object();
   }
 }
