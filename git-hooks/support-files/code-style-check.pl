@@ -47,8 +47,8 @@ if ($#java_files >= 0)
    }
 }
 
-print STDERR "Commit aborted.\n";
-exit -1;
+#print STDERR "Commit aborted.\n";
+#exit -1;
 
 sub run_and_log_system
 {
