@@ -31,3 +31,13 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+def configureGit() {
+	exec {
+		executable "./git-hooks/setup.sh"
+	}
+}
+
+project.beforeEvaluate {
+	configureGit()
+}
